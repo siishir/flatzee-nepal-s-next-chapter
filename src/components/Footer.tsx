@@ -1,3 +1,5 @@
+import Logo from "./Logo";
+
 const Footer = () => {
   return (
     <footer className="border-t border-border/50 py-12 lg:py-16">
@@ -5,8 +7,8 @@ const Footer = () => {
         <div className="flex flex-col lg:flex-row justify-between items-center gap-6">
           {/* Logo and tagline */}
           <div className="text-center lg:text-left">
-            <h3 className="text-2xl font-bold text-primary mb-2">Flatzee</h3>
-            <p className="text-sm text-muted-foreground font-medium">
+            <Logo />
+            <p className="text-sm text-muted-foreground font-medium mt-3">
               Built in Nepal with purpose.
             </p>
           </div>
