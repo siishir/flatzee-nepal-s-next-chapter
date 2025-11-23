@@ -3,6 +3,9 @@ import PhoneMockup from "./PhoneMockup";
 import CircularText from "@/components/CircularText";
 import { useScrollAnimation } from "@/hooks/useScrollAnimation";
 import { Link } from "react-router-dom";
+import { useState } from "react";
+import { Dialog, DialogContent, DialogHeader, DialogTitle } from "@/components/ui/dialog";
+import NewsletterModal from "./NewsletterModal";
 
 const Hero = () => {
   const cities = [
@@ -15,6 +18,7 @@ const Hero = () => {
     "Surkhet",
   ];
   const { ref: heroRef, isVisible: heroVisible } = useScrollAnimation(0.2);
+  const [isNewsletterOpen, setIsNewsletterOpen] = useState(false);
 
   return (
     <section
@@ -57,8 +61,8 @@ const Hero = () => {
               </div>
 
               {/* Messaging hierarchy */}
-              <div className="space-y-3">
-                <div className="space-y-3">
+              <div className="space-y-6">
+                <div className="space-y-2">
                   <div
                     className={`text-sm font-bold text-teal-400 uppercase tracking-wider transition-all duration-700 delay-200 ${
                       heroVisible
@@ -69,7 +73,7 @@ const Hero = () => {
                     INTRODUCING
                   </div>
                   <h1
-                    className={`text-4xl lg:text-6xl xl:text-7xl font-black leading-[0.9] tracking-tighter text-slate-50 transition-all duration-1000 delay-400 ${
+                    className={`text-4xl lg:text-6xl xl:text-7xl font-black leading-[0.85] tracking-tighter text-slate-50 transition-all duration-1000 delay-400 ${
                       heroVisible
                         ? "animate-slide-up"
                         : "opacity-0 translate-y-12"
@@ -79,9 +83,9 @@ const Hero = () => {
                   </h1>
                 </div>
 
-                <div className="space-y-1">
+                <div className="space-y-2">
                   <h3
-                    className={`text-2xl lg:text-4xl xl:text-5xl font-bold leading-tight text-slate-50 transition-all duration-700 delay-600 ${
+                    className={`text-2xl lg:text-4xl xl:text-5xl font-bold leading-[1.1] text-slate-50 transition-all duration-700 delay-600 ${
                       heroVisible
                         ? "animate-fade-in-up"
                         : "opacity-0 translate-y-8"
@@ -93,14 +97,14 @@ const Hero = () => {
                   </h3>
                   
                   {/* Micro-tagline */}
-                  <p className="text-xs uppercase tracking-[0.16em] text-slate-400 mt-1">
+                  <p className="text-xs uppercase tracking-[0.16em] text-slate-400 mt-3">
                     Nepal's first mobile-first apartment platform
                   </p>
                 </div>
 
-                <div className="space-y-2">
+                <div className="space-y-3 pt-2">
                   <p
-                    className={`text-lg lg:text-xl text-slate-300 font-normal max-w-xl leading-relaxed transition-all duration-700 delay-700 ${
+                    className={`text-lg lg:text-xl text-slate-300 font-normal max-w-xl leading-[1.6] transition-all duration-700 delay-700 ${
                       heroVisible
                         ? "animate-fade-in-up"
                         : "opacity-0 translate-y-8"
@@ -110,7 +114,7 @@ const Hero = () => {
                     experience built for our cities.
                   </p>
                   <p
-                    className={`text-sm text-slate-400 max-w-lg leading-relaxed transition-all duration-700 delay-800 ${
+                    className={`text-sm text-slate-400 max-w-lg leading-[1.5] transition-all duration-700 delay-800 ${
                       heroVisible
                         ? "animate-fade-in-up"
                         : "opacity-0 translate-y-8"
@@ -142,7 +146,8 @@ const Hero = () => {
                   <Button
                     size="lg"
                     variant="outline"
-                    className="text-base font-bold px-8 py-5 border-2 border-yellow-400 text-yellow-400 hover:bg-yellow-400 hover:text-slate-950 transition-all"
+                    className="text-base font-bold px-8 py-5 border-2 border-slate-500 text-slate-300 hover:bg-slate-700 hover:text-white transition-all"
+                    onClick={() => setIsNewsletterOpen(true)}
                   >
                     Get Launch Updates
                   </Button>
@@ -172,6 +177,13 @@ const Hero = () => {
           </div>
         </div>
       </div>
+      
+      {/* Newsletter Modal */}
+      <Dialog open={isNewsletterOpen} onOpenChange={setIsNewsletterOpen}>
+        <DialogContent className="max-w-md">
+          <NewsletterModal onClose={() => setIsNewsletterOpen(false)} />
+        </DialogContent>
+      </Dialog>
     </section>
   );
 };
