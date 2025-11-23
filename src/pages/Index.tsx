@@ -1,16 +1,19 @@
 import Hero from "@/components/Hero";
 import Features from "@/components/Features";
 import Newsletter from "@/components/Newsletter";
-import Footer from "@/components/Footer";
+import UniqueFooter from "@/components/UniqueFooter";
+import PageTransition from "@/components/PageTransition";
 
 const Index = () => {
   return (
-    <main className="min-h-screen bg-background">
-      <Hero />
-      <Features />
-      <Newsletter />
-      <Footer />
-    </main>
+    <PageTransition>
+      <main className="min-h-screen bg-background">
+        <Hero />
+        <Features />
+        <Newsletter />
+        <UniqueFooter />
+      </main>
+    </PageTransition>
   );
 };
 

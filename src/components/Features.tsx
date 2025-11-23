@@ -4,10 +4,10 @@ const Features = () => {
   const mainFeatures = [
     {
       icon: <Smartphone className="w-10 h-10" />,
-      title: "TikTok-Style Vertical Browsing",
-      description: "Swipe up to see the next apartment. Full-screen listings with instant visual appeal. One listing per screen, zero clutter.",
+      title: "Vertical Swipe Experience",
+      description: "A new way to explore homes. Scroll seamlessly — one full-screen apartment at a time. Zero distractions. Zero clutter. Just pure, immersive browsing that helps you decide faster. Designed like stories, not listings. Every swipe reveals a new apartment with images, essentials, and pricing — instantly. No endless grids. No tiny cards. Just bold, swipe-based discovery built for modern mobile users.",
       highlight: "Revolutionary UX",
-      stats: "10x Faster Browsing"
+      stats: "Browse 10× Faster"
     },
     {
       icon: <MapPin className="w-10 h-10" />,
@@ -18,10 +18,10 @@ const Features = () => {
     },
     {
       icon: <Users className="w-10 h-10" />,
-      title: "Built for Nepal, By Nepal",
+      title: "Built for Nepal, By Nepali",
       description: "Understanding local rental culture, payment preferences, and documentation. NPR pricing, local language support, Nepal-specific features.",
       highlight: "100% Localized",
-      stats: "500+ Early Signups"
+      stats: "100+ Early Signups"
     }
   ];
 
@@ -44,19 +44,14 @@ const Features = () => {
   ];
 
   return (
-    <section className="py-20 lg:py-32 relative">
-      {/* Background elements */}
-      <div className="absolute inset-0 bg-gradient-to-b from-transparent via-muted/50 to-transparent" />
-      <div className="absolute top-1/2 left-0 w-96 h-96 bg-primary/5 rounded-full blur-3xl -translate-y-1/2" />
-      <div className="absolute top-1/3 right-0 w-96 h-96 bg-secondary/5 rounded-full blur-3xl" />
-      
-      <div className="container relative z-10 mx-auto px-6 lg:px-12">
+    <section className="py-20 lg:py-32 relative mx-6 lg:mx-12">
+      <div className="container relative z-10 mx-auto px-8 lg:px-16">
         {/* Section header */}
         <div className="text-center mb-16 lg:mb-24">
           <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 border border-primary/20 mb-6">
             <span className="text-sm font-bold text-primary uppercase tracking-wider">Why Flatzee?</span>
           </div>
-          <h2 className="text-4xl lg:text-6xl font-black mb-6 tracking-tight">
+          <h2 className="text-4xl lg:text-6xl font-black mb-6 tracking-tight text-foreground">
             Not Just Another
             <br />
             <span className="bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">
@@ -68,71 +63,66 @@ const Features = () => {
           </p>
         </div>
 
-        {/* Main features grid */}
-        <div className="grid lg:grid-cols-3 gap-6 lg:gap-8 mb-12">
+        {/* Clean grid layout for features */}
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
           {mainFeatures.map((feature, index) => (
-            <div 
-              key={index}
-              className="group relative p-8 lg:p-10 rounded-3xl bg-gradient-to-br from-card to-card/50 backdrop-blur-sm border-2 border-border/50 hover:border-primary/50 transition-all hover:shadow-2xl hover:-translate-y-1"
-            >
-              {/* Highlight badge */}
-              <div className="absolute top-6 right-6 px-3 py-1 rounded-full bg-secondary/10 border border-secondary/30">
-                <span className="text-xs font-bold text-secondary uppercase">{feature.highlight}</span>
+            <div key={index} className="p-6 rounded-2xl bg-card border border-border hover:shadow-lg transition-all group">
+              <div className="flex items-center gap-4 mb-4">
+                <div className="w-12 h-12 rounded-xl bg-primary flex items-center justify-center text-white">
+                  {feature.icon}
+                </div>
+                <span className="px-3 py-1 rounded-full bg-secondary/10 text-secondary text-xs font-bold uppercase">
+                  {feature.highlight}
+                </span>
               </div>
-
-              {/* Icon */}
-              <div className="w-16 h-16 rounded-2xl bg-gradient-to-br from-primary to-secondary flex items-center justify-center text-white mb-6 shadow-lg group-hover:scale-110 transition-transform">
-                {feature.icon}
-              </div>
-
-              {/* Content */}
-              <h3 className="text-2xl font-black mb-4 leading-tight">{feature.title}</h3>
-              <p className="text-muted-foreground font-medium leading-relaxed mb-6">
-                {feature.description}
+              <h3 className="text-xl font-bold text-foreground mb-3">{feature.title}</h3>
+              <p className="text-muted-foreground text-sm leading-relaxed mb-4">
+                {feature.description.length > 120 ? feature.description.substring(0, 120) + '...' : feature.description}
               </p>
-
-              {/* Stats */}
-              <div className="pt-4 border-t border-border/50">
-                <p className="text-2xl font-black text-primary">{feature.stats}</p>
-              </div>
+              <div className="text-lg font-black text-primary">{feature.stats}</div>
             </div>
           ))}
         </div>
 
-        {/* Quick features */}
-        <div className="grid md:grid-cols-3 gap-6 max-w-5xl mx-auto">
+        {/* Additional features */}
+        <div className="grid md:grid-cols-3 gap-6">
           {quickFeatures.map((feature, index) => (
-            <div 
-              key={index}
-              className="p-6 rounded-2xl bg-muted/50 border border-border/50 hover:bg-card hover:border-primary/30 transition-all"
-            >
-              <div className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center text-primary mb-4">
+            <div key={index} className="flex items-start gap-4 p-4 rounded-xl bg-muted/30 hover:bg-muted/50 transition-colors">
+              <div className="w-10 h-10 rounded-lg bg-primary flex items-center justify-center text-white flex-shrink-0">
                 {feature.icon}
               </div>
-              <h4 className="text-lg font-bold mb-2">{feature.title}</h4>
-              <p className="text-sm text-muted-foreground font-medium">{feature.description}</p>
+              <div>
+                <h4 className="font-bold text-foreground text-sm mb-1">{feature.title}</h4>
+                <p className="text-xs text-muted-foreground">{feature.description}</p>
+              </div>
             </div>
           ))}
         </div>
 
         {/* Launch CTA */}
         <div className="mt-16 lg:mt-24 text-center">
-          <div className="inline-block p-8 lg:p-12 rounded-3xl bg-gradient-to-br from-primary/10 via-secondary/5 to-primary/10 border-2 border-primary/30">
-            <h3 className="text-3xl lg:text-4xl font-black mb-4">
-              Launching in <span className="text-primary">Q2 2025</span>
+          <div className="p-8 lg:p-12 rounded-3xl bg-gradient-to-br from-primary to-secondary text-white shadow-2xl">
+            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/20 border border-white/30 mb-6">
+              <div className="w-2 h-2 rounded-full bg-white animate-pulse" />
+              <span className="text-sm font-bold text-white uppercase tracking-wider">Coming Soon</span>
+            </div>
+            
+            <h3 className="text-3xl lg:text-4xl font-black mb-4 text-white">
+              Launching in <span className="text-yellow-300">Q1 2026</span>
             </h3>
-            <p className="text-lg text-muted-foreground font-medium mb-6">
-              Join 500+ early partners waiting for launch day
+            <p className="text-lg text-white/90 font-medium mb-8">
+              Join 100+ early partners waiting for launch day
             </p>
+            
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <div className="px-6 py-3 rounded-full bg-card border-2 border-border">
-                <span className="text-sm font-bold">Phase 1: Kathmandu Valley</span>
+              <div className="px-6 py-3 rounded-full bg-white/20 border border-white/30">
+                <span className="text-sm font-bold text-white">Phase 1: Empower Hosts</span>
               </div>
-              <div className="px-6 py-3 rounded-full bg-card border-2 border-border">
-                <span className="text-sm font-bold">Phase 2: Major Cities</span>
+              <div className="px-6 py-3 rounded-full bg-white/20 border border-white/30">
+                <span className="text-sm font-bold text-white">Phase 2: Welcome Guests</span>
               </div>
-              <div className="px-6 py-3 rounded-full bg-card border-2 border-border">
-                <span className="text-sm font-bold">Phase 3: All Nepal</span>
+              <div className="px-6 py-3 rounded-full bg-white/20 border border-white/30">
+                <span className="text-sm font-bold text-white">Phase 3: Transform Rentals in Nepal</span>
               </div>
             </div>
           </div>

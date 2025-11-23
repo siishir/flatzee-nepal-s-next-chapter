@@ -16,10 +16,10 @@ const Footer = () => {
           {/* Contact and social */}
           <div className="flex flex-col items-center lg:items-end gap-4">
             <a 
-              href="mailto:hello@flatzee.com" 
+              href="mailto:contact@flatzee.com" 
               className="text-foreground hover:text-primary transition-colors font-medium"
             >
-              hello@flatzee.com
+              contact@flatzee.com
             </a>
             
             <div className="flex items-center gap-4">
