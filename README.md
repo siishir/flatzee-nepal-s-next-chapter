@@ -1,73 +1,129 @@
-# Welcome to your Lovable project
+# Flatzee - Coming Soon Website
 
-## Project info
+A modern, mobile-first coming soon website for Flatzee, Nepal's first apartment rental platform with TikTok-style vertical browsing.
 
-**URL**: https://lovable.dev/projects/3cab73d4-761e-4d91-a2ce-b4b314d56eb4
+## 🏠 About Flatzee
 
-## How can I edit this code?
+Flatzee is revolutionizing apartment discovery in Nepal with a mobile-first design that lets users swipe through listings like stories. Built specifically for Nepal's rental market with local understanding and features.
 
-There are several ways of editing your application.
+**Launch Timeline:** Q1 2026  
+**Target Coverage:** 46+ cities across Nepal  
+**Early Partners:** 100+ hosts already signed up
 
-**Use Lovable**
+## 🚀 Features
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/3cab73d4-761e-4d91-a2ce-b4b314d56eb4) and start prompting.
+- **Hero Section**: Premium dark theme with phone mockup and brand messaging
+- **Features Showcase**: Clean grid layout highlighting key platform benefits
+- **Newsletter Signup**: EmailJS integration for launch notifications
+- **Early Host Program**: Dedicated application page for property owners
+- **Responsive Design**: Mobile-first approach with smooth animations
+- **Page Transitions**: Seamless navigation with motion effects
 
-Changes made via Lovable will be committed automatically to this repo.
+## 🛠 Tech Stack
 
-**Use your preferred IDE**
+- **Frontend**: React 18 + TypeScript
+- **Styling**: Tailwind CSS + shadcn/ui components
+- **Build Tool**: Vite
+- **Email Service**: EmailJS
+- **Animations**: Framer Motion
+- **Icons**: Lucide React
+- **Routing**: React Router DOM
 
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
+## 📦 Installation
 
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
+1. **Clone the repository**
+   ```bash
+   git clone <repository-url>
+   cd fz-comingsoon
+   ```
 
-Follow these steps:
+2. **Install dependencies**
+   ```bash
+   npm install
+   ```
 
-```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
+3. **Set up environment variables**
+   ```bash
+   cp .env.example .env
+   ```
+   
+   Add your EmailJS credentials:
+   ```env
+   VITE_EMAILJS_SERVICE_ID=your_service_id
+   VITE_EMAILJS_PUBLIC_KEY=your_public_key
+   ```
 
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
+4. **Start development server**
+   ```bash
+   npm run dev
+   ```
 
-# Step 3: Install the necessary dependencies.
-npm i
+## 🎨 Design System
 
-# Step 4: Start the development server with auto-reloading and an instant preview.
-npm run dev
+### Colors
+- **Primary**: `hsl(237, 65%, 62%)` - Brand blue
+- **Secondary**: `hsl(160, 65%, 45%)` - Brand teal/green
+- **Background**: Light theme with dark hero section
+
+### Typography
+- **Font**: Poppins (Google Fonts)
+- **Headings**: Bold, tracking-tight
+- **Body**: Medium weight, relaxed leading
+
+### Components
+- **Cards**: Rounded corners, subtle shadows, hover effects
+- **Buttons**: Consistent sizing, brand colors, smooth transitions
+- **Forms**: Clean inputs with proper validation states
+
+## 📧 Email Integration
+
+The website uses EmailJS for handling:
+- Newsletter signups (`template_9cid66s`)
+- Early host applications (`template_fjdsja6`)
+
+## 🗂 Project Structure
+
+```
+src/
+├── components/          # Reusable UI components
+│   ├── ui/             # shadcn/ui base components
+│   ├── Hero.tsx        # Main hero section
+│   ├── Features.tsx    # Features showcase
+│   ├── Newsletter.tsx  # Newsletter signup
+│   └── UniqueFooter.tsx # Footer component
+├── pages/              # Route pages
+│   └── EarlyHost.tsx   # Early host application
+├── hooks/              # Custom React hooks
+├── lib/                # Utility functions
+└── App.tsx             # Main application
 ```
 
-**Edit a file directly in GitHub**
+## 🚀 Deployment
 
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
+1. **Build for production**
+   ```bash
+   npm run build
+   ```
 
-**Use GitHub Codespaces**
+2. **Preview production build**
+   ```bash
+   npm run preview
+   ```
 
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
+3. **Deploy to your preferred platform**
+   - Vercel, Netlify, or any static hosting service
+   - Ensure environment variables are configured
 
-## What technologies are used for this project?
+## 📱 Contact
 
-This project is built with:
+- **Email**: contact@flatzee.com
+- **Developer**: ClickByte Technologies
+- **LinkedIn**: [Company Profile](https://www.linkedin.com/company/109975311)
 
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
+## 📄 License
 
-## How can I deploy this project?
+© 2025 Flatzee. All rights reserved.
 
-Simply open [Lovable](https://lovable.dev/projects/3cab73d4-761e-4d91-a2ce-b4b314d56eb4) and click on Share -> Publish.
+---
 
-## Can I connect a custom domain to my Lovable project?
-
-Yes, you can!
-
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
-
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/features/custom-domain#custom-domain)
+*Built with ❤️ for Nepal's rental market*
