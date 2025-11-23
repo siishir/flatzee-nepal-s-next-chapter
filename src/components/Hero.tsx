@@ -23,9 +23,9 @@ const Hero = () => {
   return (
     <section
       ref={heroRef}
-      className="relative overflow-hidden bg-gradient-to-br from-white via-slate-50 to-white p-2"
+      className="relative overflow-hidden bg-gradient-to-br from-white via-slate-50 to-white"
     >
-      <div className="relative mx-auto">
+      <div className="relative">
         {/* Circular text sitting behind the dark card, partially visible */}
         <div className="pointer-events-none absolute -top-16 left-1/2 -translate-x-1/2 hidden md:block z-0">
           <CircularText
@@ -37,15 +37,15 @@ const Hero = () => {
         </div>
 
         {/* Dark announcement card */}
-        <div className="relative overflow-hidden bg-[#020617] text-slate-50 rounded-[32px] mx-4 my-6 lg:mx-10">
+        <div className="relative overflow-hidden bg-[#020617] text-slate-50 rounded-none py-8 lg:py-16 pb-[5px]">
           {/* Radial glow behind phone */}
           <div className="pointer-events-none absolute right-[-80px] top-1/2 -translate-y-1/2 w-[420px] h-[420px] rounded-full bg-primary/25 blur-[120px] opacity-40" />
           
           {/* Subtle vertical accent bar on the left */}
           <div className="pointer-events-none absolute left-6 top-20 h-20 w-[3px] rounded-full bg-primary/30" />
           
-          <div className="container relative z-10 mx-auto px-6 lg:px-20 pt-10 pb-10">
-            <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center min-h-[calc(100vh-8rem)] lg:translate-x-4">
+          <div className="max-w-7xl relative z-10 mx-auto px-6 lg:px-20 py-0">
+            <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center min-h-[70vh]">
             {/* Left content */}
             <div className="space-y-8 lg:pr-8">
               {/* Refined coming soon pill */}
@@ -159,7 +159,9 @@ const Hero = () => {
             </div>
 
             {/* Right content - Phone mockup */}
-            <div className="flex justify-center lg:justify-end items-center relative mt-8 lg:mt-0">
+            <div className="flex justify-center lg:justify-end items-center relative mt-6 lg:mt-0">
+              {/* Focused glow behind phone mockup */}
+              <div className="pointer-events-none absolute -right-8 lg:-right-16 top-1/2 -translate-y-1/2 w-56 h-56 rounded-full bg-primary/30 blur-[80px] opacity-60 z-0" />
               <div
                 className={`relative transition-all duration-1000 delay-300 ${
                   heroVisible
