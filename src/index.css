@@ -42,6 +42,9 @@ All colors MUST be HSL.
     --gradient-glass: linear-gradient(135deg, hsl(0 0% 100% / 0.7) 0%, hsl(0 0% 100% / 0.3) 100%);
     --shadow-premium: 0 20px 60px -15px hsl(237 65% 62% / 0.15);
     --shadow-glass: 0 8px 32px 0 hsl(0 0% 0% / 0.08);
+    
+      /* Accent used for hero "lights" glow (H S% L%) */
+      --glow-accent: 45 95% 60%;
 
     --sidebar-background: 0 0% 98%;
     --sidebar-foreground: 240 5.3% 26.1%;
@@ -208,4 +211,69 @@ All colors MUST be HSL.
 
 .scroll-animate-slow {
   transition: all 1s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Slow lights on / lights off effect for small inline badges */
+@keyframes lightsPulse {
+  0%, 100% {
+    opacity: 1;
+    text-shadow: 0 0 8px hsl(var(--glow-accent) / 0.95), 0 0 28px hsl(var(--glow-accent) / 0.35);
+    transform: translateY(0);
+  }
+  50% {
+    opacity: 0.32;
+    text-shadow: none;
+    transform: translateY(0);
+  }
+}
+
+.animate-lights-blink {
+  animation: lightsPulse 4s ease-in-out infinite;
+  will-change: opacity, text-shadow;
+}
+
+/* Stronger pill-level glow (box-shadow + background tint) */
+@keyframes lightsPulsePill {
+  0%, 100% {
+    box-shadow: 0 8px 30px -6px hsl(var(--glow-accent) / 0.6), inset 0 0 40px hsl(var(--glow-accent) / 0.08);
+    background-color: rgba(2,6,23,0.98);
+    transform: translateY(0);
+  }
+  50% {
+    box-shadow: none;
+    background-color: rgba(2,6,23,0.92);
+    transform: translateY(0);
+  }
+}
+
+.animate-lights-blink-pill {
+  animation: lightsPulsePill 4s ease-in-out infinite;
+  will-change: box-shadow, background-color;
+}
+
+/* Slow dot blink to replace Tailwind's default pulse (slower and more subtle) */
+@keyframes lightsDot {
+  0%, 100% { transform: scale(1); opacity: 1; box-shadow: 0 0 8px hsl(var(--primary) / 0.9); }
+  50% { transform: scale(0.85); opacity: 0.28; box-shadow: none; }
+}
+
+.animate-lights-dot {
+  animation: lightsDot 4s ease-in-out infinite;
+}
+
+@layer utilities {
+  /* Badge + dot utilities that use the glow accent color */
+  .badge-glow {
+    background-color: hsl(var(--glow-accent) / 0.08);
+    border: 1px solid hsl(var(--glow-accent) / 0.18);
+    color: hsl(var(--glow-accent) / 0.95);
+  }
+
+  .badge-dot {
+    background-color: hsl(var(--glow-accent) / 1);
+  }
+
+  .text-glow-accent {
+    color: hsl(var(--glow-accent) / 0.95) !important;
+  }
 }

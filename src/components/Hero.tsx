@@ -50,13 +50,13 @@ const Hero = () => {
             <div className="space-y-8 lg:pr-8">
               {/* Refined coming soon pill */}
               <div
-                className={`inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-primary/10 border border-primary/25 shadow-[0_0_18px_rgba(85,99,235,0.35)] transition-all duration-700 ${
+                className={`inline-flex items-center gap-2 px-4 py-1.5 rounded-full badge-glow shadow-[0_0_18px_rgba(0,0,0,0.12)] transition-all duration-700 ${
                   heroVisible ? "animate-fade-in-up" : "opacity-0 translate-y-8"
-                }`}
+                } animate-lights-blink-pill`}
               >
-                <span className="w-2 h-2 rounded-full bg-primary animate-pulse" />
-                <span className="text-xs font-semibold tracking-wide text-primary/90">
-                  Coming soon across Nepal
+                <span className="w-2 h-2 rounded-full badge-dot animate-lights-dot" />
+                <span className="text-xs font-semibold tracking-wide text-glow-accent animate-lights-blink">
+                  Coming Soon Across Nepal
                 </span>
               </div>
 
