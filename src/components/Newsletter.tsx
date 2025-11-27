@@ -104,7 +104,7 @@ const Newsletter = () => {
             </div>
             <h3 className="text-xl font-bold text-foreground mb-3">Become an Early Host</h3>
             <p className="text-muted-foreground text-sm leading-relaxed mb-6">
-              Join our early host program and unlock 0% commission for your first 3 months.
+              Join our early host program and unlock lowered fees and intial support.
             </p>
             
             <Link to="/early-host" onClick={() => window.scrollTo(0, 0)}>

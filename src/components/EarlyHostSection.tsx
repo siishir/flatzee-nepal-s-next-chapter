@@ -86,7 +86,7 @@ const EarlyHostSection = () => {
             </h2>
             
             <p className="text-xl text-muted-foreground font-medium">
-              Get 0% commission for the first 3 months after launch — and discounted host fees as an early partner.
+              Get discounted host fees as an early partner.
             </p>
 
             <div className="space-y-4">
